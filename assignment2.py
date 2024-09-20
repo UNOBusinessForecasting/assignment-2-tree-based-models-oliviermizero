@@ -36,9 +36,5 @@ test = pd.read_csv("https://github.com/dustywhite7/Econ8310/raw/master/Assignmen
 testNew = test.drop(["meal", "id", "DateTime"], axis=1)
 testNew.head()
 
-pred = model.predict(testNew)
-
-type(pred)
-
-pred
+pred = modelFit.predict(testNew)
 
