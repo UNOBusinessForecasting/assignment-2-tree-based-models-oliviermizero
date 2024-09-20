@@ -13,13 +13,12 @@ from sklearn.model_selection import train_test_split
 
 import pandas as pd
 import numpy as np
-import patsy as pt
 
 data = pd.read_csv("https://github.com/dustywhite7/Econ8310/raw/master/AssignmentData/assignment3.csv")
 data.head()
 
 # Commented out IPython magic to ensure Python compatibility.
-model = DecisionTreeClassifier( max_depth = 10, min_samples_leaf = 10 )
+model = DecisionTreeClassifier( max_depth = 3, min_samples_leaf = 10 )
 
 Y, X = data["meal"], data.drop(["meal", "id", "DateTime"], axis=1)
 
@@ -36,9 +35,4 @@ test = pd.read_csv("https://github.com/dustywhite7/Econ8310/raw/master/Assignmen
 testNew = test.drop(["meal", "id", "DateTime"], axis=1)
 testNew.head()
 
-pred = model.predict(testNew)
-
-type(pred)
-
-pred
-
+pred = modelFit.predict(testNew)
