@@ -10,7 +10,6 @@ data.head()
 model = DecisionTreeClassifier( max_depth = 10, min_samples_leaf = 10 )
 
 Y, X = data["meal"], data.drop( ["meal", "id", "DateTime"], axis=1 )
-
 x, xt, y, yt = train_test_split( X, Y, test_size=0.33, random_state=42 )
 
 modelFit = model.fit( x,y )
